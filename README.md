@@ -23,7 +23,7 @@ mysql> create database zabbix character set utf8 collate utf8_bin;
 mysql> grant all privileges on zabbix.* to zabbix@localhost identified by 'password';
 mysql> quit;
 Import initial schema and data. You will be prompted to enter your newly created password.
-# zcat /usr/share/doc/zabbix-server-mysql*/create.sql.gz | mysql -uzabbix -p zabbixd. Configure the database for Zabbix server
+# zcat /usr/share/doc/zabbix-server-mysql*/create.sql.gz | mysql -uzabbix -p zabbix
 sudo vi /etc/zabbix/zabbix_server.conf
 设置属性DBPassword
 service zabbix-server start

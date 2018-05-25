@@ -36,8 +36,8 @@ sudo service apache2 restart
 查看日志: cat /var/log/zabbix/zabbix_server.log 
 ```
 # 2.登录和配置用户
-(1)默认管理员账户:Admin/zabbix
-(2)新建监控主机
+##### (1)默认管理员账户:Admin/zabbix
+##### (2)新建监控主机
 # 3.添加zabbix客户端
 ##### 1、添加zabbix用户群组
 ```
@@ -77,4 +77,15 @@ https://www.cnblogs.com/cloudos/p/8297856.html
 # 4.与grafana混合使用
 
 ### 1.安装grafana
-
+```
+wget https://s3-us-west-2.amazonaws.com/grafana-releases/release/grafana_5.1.3_amd64.deb
+sudo apt-get install -y adduser libfontconfig
+sudo dpkg -i grafana_5.1.3_amd64.deb
+在配置文件中将localurl改掉,配置文件地址:/etc/grafana/grafana.ini
+sudo service grafana-server start
+```
+### 2.修改配置
+```
+我主要修改了数据库和smtp的配置,数据库修改为mysql,smtp配上公司对应邮箱即可.
+需要在数据库中创建对应的用户和名称的数据库
+```
